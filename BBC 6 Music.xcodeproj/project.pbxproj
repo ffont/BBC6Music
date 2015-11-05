@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A5360FB1BEB73500019EEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5360FA1BEB73500019EEBB /* AppDelegate.swift */; };
+		2A5360FD1BEB73500019EEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5360FC1BEB73500019EEBB /* ViewController.swift */; };
+		2A5361001BEB73500019EEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5360FE1BEB73500019EEBB /* Main.storyboard */; };
+		2A5361021BEB73500019EEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5361011BEB73500019EEBB /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A5360F71BEB73500019EEBB /* BBC 6 Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBC 6 Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5360FA1BEB73500019EEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A5360FC1BEB73500019EEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2A5360FF1BEB73500019EEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A5361011BEB73500019EEBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A5361031BEB73500019EEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A5360F41BEB734F0019EEBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A5360EE1BEB734F0019EEBB = {
+			isa = PBXGroup;
+			children = (
+				2A5360F91BEB73500019EEBB /* BBC 6 Music */,
+				2A5360F81BEB73500019EEBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A5360F81BEB73500019EEBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A5360F71BEB73500019EEBB /* BBC 6 Music.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A5360F91BEB73500019EEBB /* BBC 6 Music */ = {
+			isa = PBXGroup;
+			children = (
+				2A5360FA1BEB73500019EEBB /* AppDelegate.swift */,
+				2A5360FC1BEB73500019EEBB /* ViewController.swift */,
+				2A5360FE1BEB73500019EEBB /* Main.storyboard */,
+				2A5361011BEB73500019EEBB /* Assets.xcassets */,
+				2A5361031BEB73500019EEBB /* Info.plist */,
+			);
+			path = "BBC 6 Music";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A5360F61BEB734F0019EEBB /* BBC 6 Music */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5361061BEB73500019EEBB /* Build configuration list for PBXNativeTarget "BBC 6 Music" */;
+			buildPhases = (
+				2A5360F31BEB734F0019EEBB /* Sources */,
+				2A5360F41BEB734F0019EEBB /* Frameworks */,
+				2A5360F51BEB734F0019EEBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BBC 6 Music";
+			productName = "BBC 6 Music";
+			productReference = 2A5360F71BEB73500019EEBB /* BBC 6 Music.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A5360EF1BEB734F0019EEBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Frederic Font Corbera";
+				TargetAttributes = {
+					2A5360F61BEB734F0019EEBB = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 2A5360F21BEB734F0019EEBB /* Build configuration list for PBXProject "BBC 6 Music" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A5360EE1BEB734F0019EEBB;
+			productRefGroup = 2A5360F81BEB73500019EEBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A5360F61BEB734F0019EEBB /* BBC 6 Music */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A5360F51BEB734F0019EEBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5361021BEB73500019EEBB /* Assets.xcassets in Resources */,
+				2A5361001BEB73500019EEBB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A5360F31BEB734F0019EEBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5360FD1BEB73500019EEBB /* ViewController.swift in Sources */,
+				2A5360FB1BEB73500019EEBB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2A5360FE1BEB73500019EEBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A5360FF1BEB73500019EEBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A5361041BEB73500019EEBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		2A5361051BEB73500019EEBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A5361071BEB73500019EEBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "BBC 6 Music/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.fredericfont.BBC-6-Music";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2A5361081BEB73500019EEBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "BBC 6 Music/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.fredericfont.BBC-6-Music";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A5360F21BEB734F0019EEBB /* Build configuration list for PBXProject "BBC 6 Music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5361041BEB73500019EEBB /* Debug */,
+				2A5361051BEB73500019EEBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5361061BEB73500019EEBB /* Build configuration list for PBXNativeTarget "BBC 6 Music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5361071BEB73500019EEBB /* Debug */,
+				2A5361081BEB73500019EEBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A5360EF1BEB734F0019EEBB /* Project object */;
+}
