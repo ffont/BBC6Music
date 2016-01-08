@@ -26,6 +26,7 @@ class BBC6MusicViewController_iOS: BBC6MusicViewController {
         self.programNameLabel.text = text
     }
     
+    // MARK: UI actions
     @IBAction func onPressLogo(sender: UIButton) {
         self.togglePlayPause()
     }
