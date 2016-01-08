@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>BB6Music-OSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>BBC6Music-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>BBC6Music-tvOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2A08B1731C31AE1800725AE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A08B1861C31AE1800725AE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A08B1911C31AE1800725AE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A1D73671C40050C00E8758D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A5360F61BEB734F0019EEBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
