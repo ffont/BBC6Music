@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:BBC 6 Music.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -33,7 +33,6 @@
 		2A1D73541C40016200E8758D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73521C40015700E8758D /* Assets.xcassets */; };
 		2A1D73551C40018400E8758D /* Main-iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73501C40012D00E8758D /* Main-iOS.storyboard */; };
 		2A1D73561C40018700E8758D /* Main-tvOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73511C40012D00E8758D /* Main-tvOS.storyboard */; };
-		2A1D736D1C40050C00E8758D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D736C1C40050C00E8758D /* Assets.xcassets */; };
 		2A1D73751C40052900E8758D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D735F1C40049000E8758D /* Images.xcassets */; };
 		2A1D73761C40052900E8758D /* ViewController-OSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73611C40049000E8758D /* ViewController-OSX.xib */; };
 		2A1D73781C40052900E8758D /* AppDelegate-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D735E1C40049000E8758D /* AppDelegate-OSX.swift */; };
@@ -69,10 +68,6 @@
 		2A1D73611C40049000E8758D /* ViewController-OSX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ViewController-OSX.xib"; path = "BBC 6Music OSX/ViewController-OSX.xib"; sourceTree = "<group>"; };
 		2A1D73631C40049000E8758D /* ViewController-OSX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ViewController-OSX.swift"; path = "BBC 6Music OSX/ViewController-OSX.swift"; sourceTree = "<group>"; };
 		2A1D73681C40050C00E8758D /* BBC6Music-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBC6Music-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A1D736A1C40050C00E8758D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A1D736C1C40050C00E8758D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2A1D736F1C40050C00E8758D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2A1D73711C40050C00E8758D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1D737B1C400A7300E8758D /* BBC6MetadataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBC6MetadataParser.swift; sourceTree = "<group>"; };
 		2A1D737F1C40100900E8758D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = "BBC 6Music OSX/MainMenu.xib"; sourceTree = "<group>"; };
 		2A5360F71BEB73500019EEBB /* BBC6Music-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBC6Music-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,17 +111,6 @@
 			name = "BBC 6Music OSX";
 			sourceTree = "<group>";
 		};
-		2A1D73691C40050C00E8758D /* BB6Music-OSX */ = {
-			isa = PBXGroup;
-			children = (
-				2A1D736A1C40050C00E8758D /* AppDelegate.swift */,
-				2A1D736C1C40050C00E8758D /* Assets.xcassets */,
-				2A1D736E1C40050C00E8758D /* MainMenu.xib */,
-				2A1D73711C40050C00E8758D /* Info.plist */,
-			);
-			path = "BB6Music-OSX";
-			sourceTree = "<group>";
-		};
 		2A2EBB611BF7580500BF884A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +133,6 @@
 				2A5360F91BEB73500019EEBB /* BBC 6Music iOS/tvOS */,
 				2A1D73571C4003D500E8758D /* BBC 6Music OSX */,
 				2A2EBB611BF7580500BF884A /* Resources */,
-				2A1D73691C40050C00E8758D /* BB6Music-OSX */,
 				2A5360F81BEB73500019EEBB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -302,7 +285,6 @@
 			files = (
 				2A1D73751C40052900E8758D /* Images.xcassets in Resources */,
 				2A1D73761C40052900E8758D /* ViewController-OSX.xib in Resources */,
-				2A1D736D1C40050C00E8758D /* Assets.xcassets in Resources */,
 				2A1D737A1C40052900E8758D /* Info-OSX.plist in Resources */,
 				2A1D73801C40100900E8758D /* MainMenu.xib in Resources */,
 			);
@@ -361,17 +343,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2A1D736E1C40050C00E8758D /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A1D736F1C40050C00E8758D /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2A08B1991C31AE1800725AE9 /* Debug */ = {
@@ -564,6 +535,7 @@
 				2A1D73741C40050C00E8758D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A5360F21BEB734F0019EEBB /* Build configuration list for PBXProject "BBC 6Music" */ = {
 			isa = XCConfigurationList;
