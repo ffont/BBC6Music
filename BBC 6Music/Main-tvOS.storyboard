@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Music View Controller tvOS-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BBC6MusicViewController_tvOS" customModule="BBC6Music_tvOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sa8-rI-63u">
+                                <rect key="frame" x="589" y="165" width="742" height="471"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="742" id="USi-2f-Epq"/>
+                                    <constraint firstAttribute="height" constant="471" id="Yy1-fg-h6z"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkd-Om-2M1">
+                                <rect key="frame" x="20" y="755" width="1868" height="209"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Program name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb6-aE-S7b" userLabel="ProgramNameLabel">
+                                <rect key="frame" x="30" y="680" width="1858" height="86"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="56"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12816114771300349" green="0.43622444566541541" blue="0.52562570701357458" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sa8-rI-63u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TtH-XK-NBh"/>
+                            <constraint firstItem="fkd-Om-2M1" firstAttribute="top" secondItem="Sa8-rI-63u" secondAttribute="bottom" constant="140" id="aLT-1n-yp8"/>
+                            <constraint firstItem="Sa8-rI-63u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="165" id="hL4-1T-mKQ"/>
+                            <constraint firstItem="rb6-aE-S7b" firstAttribute="top" secondItem="Sa8-rI-63u" secondAttribute="bottom" constant="50" id="hwg-x2-xyG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="fkd-Om-2M1" id="LAj-zd-PdU"/>
+                        <outlet property="logo" destination="Sa8-rI-63u" id="rh8-Ne-Wkw"/>
+                        <outlet property="programNameLabel" destination="rb6-aE-S7b" id="nuc-iq-esB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="207" y="399"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background.png" width="1319" height="836"/>
+    </resources>
+</document>
