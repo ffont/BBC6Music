@@ -18,7 +18,7 @@ class BBC6MusicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUp()
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateLabels"), userInfo: nil, repeats: true)
+        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(BBC6MusicViewController.updateLabels), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,16 +40,21 @@ class BBC6MusicViewController: UIViewController {
     
     func setUp(){
         // Labels and metadata stuff
+        self.adaptSizes()
         self.setLabelText("")
         self.setProgrameNameLabelText("")
         self.metadata_parser = BBC6MetadataParser()
         updateMetadata()
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMetadata"), userInfo: nil, repeats: true)
+        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(BBC6MusicViewController.updateMetadata), userInfo: nil, repeats: true)
         
         // Player stuff
         self.playerItem = AVPlayerItem(URL:NSURL(string: "http://www.listenlive.eu/bbc6music.m3u")!)
         self.playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
         self.player = AVPlayer(playerItem: self.playerItem)
+    }
+    
+    func adaptSizes(){
+        // TO be overriden in spciefic view controllers
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
