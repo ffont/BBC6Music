@@ -71,10 +71,10 @@ class BBC6MetadataParser {
     func parseProgramMetadata(){
         // Extract program name from stored program page html content
         if self.html_program_content == "" { return }
-        var processed_string = self.html_program_content.componentsSeparatedByString("<span class=\"titling-title-inline-1\">")[1]
-        let presenter:NSString = processed_string.componentsSeparatedByString("</span><span class=\"titling-title-inline-2\">")[0]
-        processed_string = processed_string.componentsSeparatedByString("</span><span class=\"titling-title-inline-2\">")[1]
-        let name:NSString = processed_string.componentsSeparatedByString("</span>")[0]
+        var processed_string = self.html_program_content.componentsSeparatedByString("<h3 class=\"on-air__episode-title\">")[1]
+        let presenter:NSString = processed_string.componentsSeparatedByString("</h3>")[0]
+        processed_string = processed_string.componentsSeparatedByString("<p class=\"on-air__episode-synopsis\">")[1]
+        let name:NSString = processed_string.componentsSeparatedByString("</p>")[0]
         self.program_name = (presenter as String) + " - " + (name as String)
     }
     
