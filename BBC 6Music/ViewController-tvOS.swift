@@ -14,25 +14,25 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var programNameLabel: UITextView!
     
-    override func setLogoAlpha(alpha: CGFloat) {
+    override func setLogoAlpha(_ alpha: CGFloat) {
         self.logo.alpha = alpha
     }
     
-    override func setLabelText(text: String) {
+    override func setLabelText(_ text: String) {
         self.label.text = text
     }
     
-    override func setProgrameNameLabelText(text: String) {
+    override func setProgrameNameLabelText(_ text: String) {
         self.programNameLabel.text = text
     }
     
     // MARK: tvos button pressed handler
-    override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
+    override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
         for press in presses {
-            if(press.type == UIPressType.PlayPause) {
+            if(press.type == UIPressType.playPause) {
                 self.togglePlayPause()
             } else {
-                super.pressesEnded(presses, withEvent: event)
+                super.pressesEnded(presses, with: event)
             }
         }
     }

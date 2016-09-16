@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Music View Controller tvOS-->
@@ -16,35 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sa8-rI-63u">
-                                <rect key="frame" x="589" y="165" width="742" height="471"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sa8-rI-63u">
+                                <frame key="frameInset" minX="589" minY="77" width="742" height="471"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="742" id="USi-2f-Epq"/>
                                     <constraint firstAttribute="height" constant="471" id="Yy1-fg-h6z"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkd-Om-2M1">
-                                <rect key="frame" x="20" y="755" width="1868" height="209"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkd-Om-2M1">
+                                <frame key="frameInset" minX="20" minY="755" width="1868" height="276"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="gW9-g1-ssQ"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Program name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb6-aE-S7b" userLabel="ProgramNameLabel">
-                                <rect key="frame" x="30" y="680" width="1858" height="86"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="56"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Program name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb6-aE-S7b" userLabel="ProgramNameLabel">
+                                <frame key="frameInset" minX="30" minY="596" width="1858" height="151"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.12816114771300349" green="0.43622444566541541" blue="0.52562570701357458" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12816114771300349" green="0.43622444566541541" blue="0.52562570701357458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Sa8-rI-63u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TtH-XK-NBh"/>
-                            <constraint firstItem="fkd-Om-2M1" firstAttribute="top" secondItem="Sa8-rI-63u" secondAttribute="bottom" constant="140" id="aLT-1n-yp8"/>
-                            <constraint firstItem="Sa8-rI-63u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="165" id="hL4-1T-mKQ"/>
-                            <constraint firstItem="rb6-aE-S7b" firstAttribute="top" secondItem="Sa8-rI-63u" secondAttribute="bottom" constant="50" id="hwg-x2-xyG"/>
+                            <constraint firstItem="fkd-Om-2M1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="70B-Z5-KYN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rb6-aE-S7b" secondAttribute="trailing" constant="10" id="9xj-Gm-kAH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fkd-Om-2M1" secondAttribute="trailing" constant="10" id="CSH-rt-caM"/>
+                            <constraint firstItem="fkd-Om-2M1" firstAttribute="top" secondItem="rb6-aE-S7b" secondAttribute="bottom" constant="10" id="FZi-nw-iTb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fkd-Om-2M1" secondAttribute="bottom" constant="10" id="Hw1-cv-Bxc"/>
+                            <constraint firstItem="Sa8-rI-63u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qws-Hq-fJP"/>
+                            <constraint firstItem="rb6-aE-S7b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4D-G6-Ros"/>
+                            <constraint firstItem="fkd-Om-2M1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="RqH-MU-ntx"/>
+                            <constraint firstItem="rb6-aE-S7b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="UF2-tZ-aUt"/>
+                            <constraint firstItem="rb6-aE-S7b" firstAttribute="top" secondItem="Sa8-rI-63u" secondAttribute="bottom" constant="40" id="Y7Q-96-Fmc"/>
+                            <constraint firstItem="Sa8-rI-63u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="Yca-1i-I6f"/>
                         </constraints>
                     </view>
                     <connections>
@@ -61,4 +72,9 @@
     <resources>
         <image name="background.png" width="1319" height="836"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

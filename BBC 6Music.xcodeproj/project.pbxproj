@@ -231,6 +231,7 @@
 					2A08B1731C31AE1800725AE9 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 5EJK62P4MU;
+						LastSwiftMigration = 0800;
 					};
 					2A1D73671C40050C00E8758D = {
 						CreatedOnToolsVersion = 7.2;
@@ -238,6 +239,7 @@
 					2A5360F61BEB734F0019EEBB = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 5EJK62P4MU;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -357,6 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffont.BBC6Music-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -373,6 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffont.BBC6Music-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -499,6 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffont.BBC6Music-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -513,6 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffont.BBC6Music-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

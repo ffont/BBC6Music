@@ -14,15 +14,15 @@ class BBC6MusicViewController_iOS: BBC6MusicViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var programNameLabel: UITextView!
     
-    override func setLogoAlpha(alpha: CGFloat) {
+    override func setLogoAlpha(_ alpha: CGFloat) {
         self.logo.alpha = alpha
     }
     
-    override func setLabelText(text: String) {
+    override func setLabelText(_ text: String) {
         self.label.text = text
     }
     
-    override func setProgrameNameLabelText(text: String) {
+    override func setProgrameNameLabelText(_ text: String) {
         self.programNameLabel.text = text
     }
     
@@ -34,12 +34,12 @@ class BBC6MusicViewController_iOS: BBC6MusicViewController {
         //self.logo.setNeedsLayout()
         //self.logo.setNeedsDisplay()
         
-        switch UIDevice.currentDevice().userInterfaceIdiom {
-            case .Phone:
+        switch UIDevice.current.userInterfaceIdiom {
+            case .phone:
                 // If device is iPhone, reduce label and programNameLabel font sizes
-                self.label.font = UIFont.systemFontOfSize(16)
-                self.programNameLabel.font = UIFont.systemFontOfSize(20)
-            case .Pad:
+                self.label.font = UIFont.systemFont(ofSize: 18)
+                self.programNameLabel.font = UIFont.systemFont(ofSize: 24)
+            case .pad:
                 break
             default:
                 break
@@ -47,7 +47,7 @@ class BBC6MusicViewController_iOS: BBC6MusicViewController {
     }
     
     // MARK: UI actions
-    @IBAction func onPressLogo(sender: UIButton) {
+    @IBAction func onPressLogo(_ sender: UIButton) {
         self.togglePlayPause()
     }
 }

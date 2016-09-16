@@ -18,7 +18,7 @@ class BBC6MusicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUp()
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(BBC6MusicViewController.updateLabels), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(BBC6MusicViewController.updateLabels), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,15 +26,15 @@ class BBC6MusicViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setLogoAlpha(alpha: CGFloat) {
+    func setLogoAlpha(_ alpha: CGFloat) {
         // Method to override in subclass
     }
     
-    func setLabelText(text: String) {
+    func setLabelText(_ text: String) {
         // Method to override in subclass
     }
     
-    func setProgrameNameLabelText(text: String) {
+    func setProgrameNameLabelText(_ text: String) {
         // Method to override in subclass
     }
     
@@ -45,11 +45,11 @@ class BBC6MusicViewController: UIViewController {
         self.setProgrameNameLabelText("")
         self.metadata_parser = BBC6MetadataParser()
         updateMetadata()
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(BBC6MusicViewController.updateMetadata), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(BBC6MusicViewController.updateMetadata), userInfo: nil, repeats: true)
         
         // Player stuff
-        self.playerItem = AVPlayerItem(URL:NSURL(string: "http://www.listenlive.eu/bbc6music.m3u")!)
-        self.playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
+        self.playerItem = AVPlayerItem(url:URL(string: "http://www.listenlive.eu/bbc6music.m3u")!)
+        self.playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil)
         self.player = AVPlayer(playerItem: self.playerItem)
     }
     
@@ -57,7 +57,7 @@ class BBC6MusicViewController: UIViewController {
         // TO be overriden in spciefic view controllers
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "status" {
             print("Status: \(self.playerItem.status.rawValue)")
             print("Error: \(self.playerItem.error)")
@@ -85,12 +85,12 @@ class BBC6MusicViewController: UIViewController {
     
     func updateLabels() {
         var label_contents = ""
-        for element in self.metadata_parser.recent_metadata.reverse() {
+        for element in self.metadata_parser.recent_metadata.reversed() {
             let artist:NSString = element["artist"]! as! NSString
             let track:NSString = element["track"]! as! NSString
-            let now = NSDate()
-            let started:NSDate = element["started"]! as! NSDate
-            let seconds_ago = now.timeIntervalSinceDate(started)
+            let now = Date()
+            let started:Date = element["started"]! as! Date
+            let seconds_ago = now.timeIntervalSince(started)
             let mintues_ago:Int = Int(seconds_ago / 60.0)
             label_contents += "\(artist) - \(track) - \(mintues_ago) minutes ago\n"
         }
