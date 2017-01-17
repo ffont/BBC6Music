@@ -27,8 +27,6 @@
 		2A1D73491C4000E100E8758D /* icon_ios512.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73341C4000D800E8758D /* icon_ios512.png */; };
 		2A1D734A1C4000E100E8758D /* icon_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73351C4000D800E8758D /* icon_small.png */; };
 		2A1D734B1C4000E100E8758D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73361C4000D800E8758D /* icon.png */; };
-		2A1D734E1C40010B00E8758D /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D734C1C40010800E8758D /* Info-iOS.plist */; };
-		2A1D734F1C40010D00E8758D /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D734D1C40010800E8758D /* Info-tvOS.plist */; };
 		2A1D73531C40015E00E8758D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73521C40015700E8758D /* Assets.xcassets */; };
 		2A1D73541C40016200E8758D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73521C40015700E8758D /* Assets.xcassets */; };
 		2A1D73551C40018400E8758D /* Main-iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73501C40012D00E8758D /* Main-iOS.storyboard */; };
@@ -37,7 +35,6 @@
 		2A1D73761C40052900E8758D /* ViewController-OSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73611C40049000E8758D /* ViewController-OSX.xib */; };
 		2A1D73781C40052900E8758D /* AppDelegate-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D735E1C40049000E8758D /* AppDelegate-OSX.swift */; };
 		2A1D73791C40052900E8758D /* ViewController-OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D73631C40049000E8758D /* ViewController-OSX.swift */; };
-		2A1D737A1C40052900E8758D /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D73601C40049000E8758D /* Info-OSX.plist */; };
 		2A1D737C1C400A7300E8758D /* BBC6MetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D737B1C400A7300E8758D /* BBC6MetadataParser.swift */; };
 		2A1D737D1C400A7300E8758D /* BBC6MetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D737B1C400A7300E8758D /* BBC6MetadataParser.swift */; };
 		2A1D737E1C400A7300E8758D /* BBC6MetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D737B1C400A7300E8758D /* BBC6MetadataParser.swift */; };
@@ -225,7 +222,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Frederic Font Corbera";
 				TargetAttributes = {
 					2A08B1731C31AE1800725AE9 = {
@@ -271,7 +268,6 @@
 			files = (
 				2A1D73461C4000E100E8758D /* icon_ios.png in Resources */,
 				2A1D73381C4000DB00E8758D /* background.png in Resources */,
-				2A1D734E1C40010B00E8758D /* Info-iOS.plist in Resources */,
 				2A1D73471C4000E100E8758D /* icon_ios76.png in Resources */,
 				2A1D73491C4000E100E8758D /* icon_ios512.png in Resources */,
 				2A1D734B1C4000E100E8758D /* icon.png in Resources */,
@@ -288,7 +284,6 @@
 			files = (
 				2A1D73751C40052900E8758D /* Images.xcassets in Resources */,
 				2A1D73761C40052900E8758D /* ViewController-OSX.xib in Resources */,
-				2A1D737A1C40052900E8758D /* Info-OSX.plist in Resources */,
 				2A1D73801C40100900E8758D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1D734F1C40010D00E8758D /* Info-tvOS.plist in Resources */,
 				2A1D73401C4000E100E8758D /* icon_ios.png in Resources */,
 				2A1D733F1C4000E100E8758D /* background.png in Resources */,
 				2A1D73411C4000E100E8758D /* icon_ios76.png in Resources */,
@@ -427,8 +421,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -471,8 +467,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -489,6 +487,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
