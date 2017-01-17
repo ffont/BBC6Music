@@ -92,7 +92,7 @@ class BBC6MusicViewController: UIViewController {
             let started:Date = element["started"]! as! Date
             let seconds_ago = now.timeIntervalSince(started)
             let minutes_ago:Int = Int(seconds_ago / 60.0)
-            label_contents += "\(artist) - \(track) - \(minutes_ago) minutes ago\n"
+			label_contents += "\"\(track)\"\nby \(artist)\n\nstarted \(minutes_ago) minutes ago"
         }
         self.setLabelText(label_contents)
         self.setProgrameNameLabelText(self.metadata_parser.program_name as String)
