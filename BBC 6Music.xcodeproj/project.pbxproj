@@ -235,6 +235,7 @@
 					};
 					2A1D73671C40050C00E8758D = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 					2A5360F61BEB734F0019EEBB = {
 						CreatedOnToolsVersion = 7.1;
@@ -393,6 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffont.BB6Music-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -408,6 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ffont.BB6Music-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

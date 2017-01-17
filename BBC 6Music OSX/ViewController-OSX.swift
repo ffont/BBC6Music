@@ -20,7 +20,7 @@ class BBC6MusicViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateLabels"), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(BBC6MusicViewController.updateLabels), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear() {
@@ -32,10 +32,10 @@ class BBC6MusicViewController: NSViewController {
         // Metadata parser stuff
         self.metadata_parser = BBC6MetadataParser()
         updateMetadata()
-        _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("updateMetadata"), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(BBC6MusicViewController.updateMetadata), userInfo: nil, repeats: true)
 
         // Player stuff
-        self.playerItem = AVPlayerItem(URL:NSURL(string: "http://www.listenlive.eu/bbc6music.m3u")!)
+        self.playerItem = AVPlayerItem(url:URL(string: "http://www.listenlive.eu/bbc6music.m3u")!)
         self.player = AVPlayer(playerItem:self.playerItem)
         self.player.play()
     }
@@ -43,17 +43,17 @@ class BBC6MusicViewController: NSViewController {
     
     // MARK: UI actions
     
-    @IBAction func onSwitchChange(sender: AnyObject) {
+    @IBAction func onSwitchChange(_ sender: AnyObject) {
         if sender.selectedSegment == 1 {
             self.player.play()
-            self.slider.enabled = true
+            self.slider.isEnabled = true
         } else {
             self.player.pause()
-            self.slider.enabled = false
+            self.slider.isEnabled = false
         }
     }
     
-    @IBAction func onSliderChange(sender: AnyObject) {
+    @IBAction func onSliderChange(_ sender: AnyObject) {
         self.player.volume = self.slider.floatValue
     }
  
@@ -66,12 +66,12 @@ class BBC6MusicViewController: NSViewController {
     
     func updateLabels() {
         var label_contents = ""
-        for element in self.metadata_parser.recent_metadata.reverse() {
+        for element in self.metadata_parser.recent_metadata.reversed() {
             let artist:NSString = element["artist"]! as! NSString
             let track:NSString = element["track"]! as! NSString
-            let now = NSDate()
-            let started:NSDate = element["started"]! as! NSDate
-            let seconds_ago = now.timeIntervalSinceDate(started)
+            let now = Date()
+            let started:Date = element["started"]! as! Date
+            let seconds_ago = now.timeIntervalSince(started)
             let mintues_ago:Int = Int(seconds_ago / 60.0)
             label_contents += "\(artist) - \(track) - \(mintues_ago) minutes ago\n"
         }
