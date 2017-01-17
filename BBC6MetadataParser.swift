@@ -15,10 +15,14 @@ class BBC6MetadataParser {
     var program_id:NSString = ""
     var program_name:NSString = ""
     var recent_metadata: [NSDictionary] = []
-    
+
     func getHTMLData(){
+		let now = Date()
+		let epoch = Int(now.timeIntervalSince1970)
+		
         // Get track, artist name, and program id from realtime feed
-        let myURLString = "http://polling.bbc.co.uk/radio/realtime/bbc_6music.jsonp"
+        let myURLString = "http://polling.bbc.co.uk/radio/realtime/bbc_6music.jsonp?cachebash=\(epoch)"
+		print("\(myURLString)")
         if let myURL = URL(string: myURLString) {
             do {
                 let myHTMLString = try NSString(contentsOf: myURL, encoding: String.Encoding.utf8.rawValue)
