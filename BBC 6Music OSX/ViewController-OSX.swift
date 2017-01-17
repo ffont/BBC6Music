@@ -10,7 +10,7 @@ import Cocoa
 import AVFoundation
 
 class BBC6MusicViewController: NSViewController {
-    
+
     var playerItem:AVPlayerItem!
     var player:AVPlayer!
     var metadata_parser:BBC6MetadataParser!
@@ -22,12 +22,12 @@ class BBC6MusicViewController: NSViewController {
         super.viewDidLoad()
         _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(BBC6MusicViewController.updateLabels), userInfo: nil, repeats: true)
     }
-    
+
     override func viewDidAppear() {
         super.viewDidAppear()
         updateLabels()
     }
-    
+
     func setUp(){
         // Metadata parser stuff
         self.metadata_parser = BBC6MetadataParser()
@@ -40,9 +40,9 @@ class BBC6MusicViewController: NSViewController {
         self.player.play()
     }
 
-    
+
     // MARK: UI actions
-    
+
     @IBAction func onSwitchChange(_ sender: AnyObject) {
         if sender.selectedSegment == 1 {
             self.player.play()
@@ -52,29 +52,38 @@ class BBC6MusicViewController: NSViewController {
             self.slider.isEnabled = false
         }
     }
-    
+
     @IBAction func onSliderChange(_ sender: AnyObject) {
         self.player.volume = self.slider.floatValue
     }
- 
+
     // MARK: update metadata and labels handlers
-    
+
     func updateMetadata(){
         self.metadata_parser.getHTMLData()
         self.metadata_parser.parseMetadata()
     }
-    
+
     func updateLabels() {
-        var label_contents = ""
+		var label_contents = ""
+		var trackNameLength:Int = 0
         for element in self.metadata_parser.recent_metadata.reversed() {
             let artist:NSString = element["artist"]! as! NSString
             let track:NSString = element["track"]! as! NSString
             let now = Date()
             let started:Date = element["started"]! as! Date
             let seconds_ago = now.timeIntervalSince(started)
-            let mintues_ago:Int = Int(seconds_ago / 60.0)
-            label_contents += "\(artist) - \(track) - \(mintues_ago) minutes ago\n"
-        }
-        self.label.stringValue = label_contents
+            let minutes_ago:Int = Int(seconds_ago / 60.0)
+			
+			label_contents = "\"\(track)\"\nby \(artist)\n\nstarted \(minutes_ago) minutes ago"
+			trackNameLength = track.length
+		}
+		
+		let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: label_contents)
+		attributedText.addAttributes([NSFontAttributeName: NSFont.boldSystemFont(ofSize:13)], range: NSRange(location:0, length:trackNameLength+2))
+		
+		self.label.attributedStringValue = attributedText
+
+//        self.label.stringValue = label_contents
     }
 }
