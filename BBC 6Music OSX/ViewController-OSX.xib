@@ -42,9 +42,9 @@
                     </connections>
                 </slider>
                 <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cu1-zM-i5f">
-                    <rect key="frame" x="337" y="16" width="71" height="25"/>
+                    <rect key="frame" x="339" y="16" width="67" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="separated" trackingMode="selectOne" id="wiy-9z-EWt">
+                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="wiy-9z-EWt">
                         <font key="font" metaFont="system"/>
                         <segments>
                             <segment label="■" width="32"/>
