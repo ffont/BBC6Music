@@ -65,8 +65,7 @@ class BBC6MusicViewController: NSViewController {
     }
 
     func updateLabels() {
-		var label_contents = ""
-		var trackNameLength:Int = 0
+        let attributedLabelContents = NSMutableAttributedString()
         for element in self.metadata_parser.recent_metadata.reversed() {
             let artist:NSString = element["artist"]! as! NSString
             let track:NSString = element["track"]! as! NSString
@@ -75,15 +74,11 @@ class BBC6MusicViewController: NSViewController {
             let seconds_ago = now.timeIntervalSince(started)
             let minutes_ago:Int = Int(seconds_ago / 60.0)
 			
-			label_contents = "\"\(track)\"\nby \(artist)\n\nstarted \(minutes_ago) minutes ago"
-			trackNameLength = track.length
-		}
-		
-		let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: label_contents)
-		attributedText.addAttributes([NSFontAttributeName: NSFont.boldSystemFont(ofSize:13)], range: NSRange(location:0, length:trackNameLength+2))
-		
-		self.label.attributedStringValue = attributedText
-
-//        self.label.stringValue = label_contents
+			let labelContents = "\(track) by \(artist) (\(minutes_ago) minutes ago)\n"
+            let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelContents)
+            attributedText.addAttributes([NSFontAttributeName: NSFont.boldSystemFont(ofSize:13)], range: NSRange(location:0, length:track.length))
+            attributedLabelContents.append(attributedText)
+        }
+		self.label.attributedStringValue = attributedLabelContents
     }
 }
