@@ -61,7 +61,15 @@ class BBC6MusicViewController: NSViewController {
 
     func updateMetadata(){
         self.metadata_parser.getHTMLData()
-        self.metadata_parser.parseMetadata()
+        let newItemWasAdded = self.metadata_parser.parseMetadata()
+        if newItemWasAdded {
+            // Send notification to the notification center
+            // Send notification
+            let notification = NSUserNotification()
+            notification.title = self.metadata_parser.recent_metadata.reversed()[0]["artist"] as? String
+            notification.informativeText = self.metadata_parser.recent_metadata.reversed()[0]["track"] as? String
+            NSUserNotificationCenter.default.deliver(notification)
+        }
     }
 
     func updateLabels() {
