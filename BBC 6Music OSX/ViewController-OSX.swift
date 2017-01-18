@@ -66,8 +66,8 @@ class BBC6MusicViewController: NSViewController {
             // Send notification to the notification center
             // Send notification
             let notification = NSUserNotification()
-            notification.title = self.metadata_parser.recent_metadata.reversed()[0]["artist"] as? String
-            notification.informativeText = self.metadata_parser.recent_metadata.reversed()[0]["track"] as? String
+            notification.title = self.metadata_parser.recent_metadata.reversed()[0]["track"] as? String
+            notification.informativeText = self.metadata_parser.recent_metadata.reversed()[0]["artist"] as? String
             NSUserNotificationCenter.default.deliver(notification)
         }
     }
