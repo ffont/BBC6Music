@@ -47,8 +47,8 @@ class BBC6MetadataParser {
         }
     }
     
-    func parseMetadata(){
-        if self.html_content == "" { return }
+    func parseMetadata() -> Bool {
+        if self.html_content == "" { return false }
         
         // Extract artist, track and program id from stored html content
         var artist:NSString = ""
@@ -68,8 +68,9 @@ class BBC6MetadataParser {
         let r_seconds_ago:Int = realtimeJson!["seconds_ago"] as! Int
         let now = Date()
         started = now.addingTimeInterval(TimeInterval(-r_seconds_ago))
-        self.addToRecentMetadata(artist, track:track, started:started)
+        let newItemWasAdded = self.addToRecentMetadata(artist, track:track, started:started)
         self.program_id = (realtimeJson!["episode_pid"] as? NSString)!
+        return newItemWasAdded
     }
     
     func parseProgramMetadata(){
@@ -82,16 +83,20 @@ class BBC6MetadataParser {
         self.program_name = "\(presenter) \(name)" as NSString
     }
     
-    func addToRecentMetadata(_ artist:NSString, track:NSString, started:Date){
+    func addToRecentMetadata(_ artist:NSString, track:NSString, started:Date) -> Bool {
+        var newItemWasAdded = false
         if (self.recent_metadata.count == 0){
             self.recent_metadata.append(["artist": artist, "track": track, "started": started])
+            newItemWasAdded = true
         } else {
             if !artist.isEqual(to: self.recent_metadata[self.recent_metadata.count - 1]["artist"] as! String) && !track.isEqual(to: self.recent_metadata[self.recent_metadata.count - 1]["track"] as! String){
                 self.recent_metadata.append(["artist": artist, "track": track, "started": started])
+                newItemWasAdded = true
             }
         }
         if (self.recent_metadata.count > 5) {
             self.recent_metadata.remove(at: 0)
         }
+        return newItemWasAdded
     }
 }
