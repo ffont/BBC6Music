@@ -74,11 +74,11 @@ class BBC6MusicViewController: NSViewController {
             let seconds_ago = now.timeIntervalSince(started)
             let minutes_ago:Int = Int(seconds_ago / 60.0)
 			
-			let labelContents = "\(track) by \(artist) (\(minutes_ago) minutes ago)\n"
+            let labelContents = "\(track) by \(artist) (\(minutes_ago) minutes ago)\n"
             let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelContents)
             attributedText.addAttributes([NSFontAttributeName: NSFont.boldSystemFont(ofSize:13)], range: NSRange(location:0, length:track.length))
             attributedLabelContents.append(attributedText)
         }
-		self.label.attributedStringValue = attributedLabelContents
+        self.label.attributedStringValue = attributedLabelContents
     }
 }
