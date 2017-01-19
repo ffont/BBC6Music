@@ -84,13 +84,18 @@ class BBC6MetadataParser {
         self.program_name = "\(presenter) \(name)" as NSString
     }
     
-    func parseArtworkLink(){
+    func parseArtworkLink() -> Bool {
         // Extract currently playing artwork url from stored program page html content
-        if self.html_program_content == "" { return }
+        // Returns True if the parsed url is different from the previous one
+        if self.html_program_content == "" { return false }
         var processed_string = self.html_program_content.components(separatedBy: "<div class=\"richtrack__albumcover")[1]
         processed_string = processed_string.components(separatedBy: "src=\"")[1]
         let url:NSString = processed_string.components(separatedBy: "\"")[0] as NSString
+        if (self.current_artwork_url == url){
+            return false
+        }
         self.current_artwork_url = url
+        return true
     }
     
     func addToRecentMetadata(_ artist:NSString, track:NSString, started:Date) -> Bool {
