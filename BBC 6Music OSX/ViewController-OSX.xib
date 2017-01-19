@@ -6,8 +6,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="RadioViewController" customModule="BBC6Music_OSX" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="BBC6MusicViewController" customModule="BBC6Music_OSX" customModuleProvider="target">
             <connections>
+                <outlet property="artwork" destination="bMc-e0-Ai8" id="pRj-ND-tNx"/>
                 <outlet property="label" destination="Qdw-Xr-rYh" id="gn3-Mq-pAQ"/>
                 <outlet property="onOff" destination="cu1-zM-i5f" id="rR4-Z2-haG"/>
                 <outlet property="slider" destination="RG5-WG-xdQ" id="k5c-jW-dgP"/>
@@ -17,11 +18,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="426" height="129"/>
+            <rect key="frame" x="0.0" y="0.0" width="535" height="129"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdw-Xr-rYh">
-                    <rect key="frame" x="18" y="43" width="390" height="72"/>
+                    <rect key="frame" x="127" y="37" width="390" height="72"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" allowsEditingTextAttributes="YES" id="Pfe-Jh-QXk">
                         <font key="font" metaFont="system"/>
@@ -34,7 +35,7 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RG5-WG-xdQ">
-                    <rect key="frame" x="18" y="18" width="307" height="19"/>
+                    <rect key="frame" x="127" y="12" width="307" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="dVS-g3-wZE"/>
                     <connections>
@@ -42,7 +43,7 @@
                     </connections>
                 </slider>
                 <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cu1-zM-i5f">
-                    <rect key="frame" x="339" y="16" width="67" height="25"/>
+                    <rect key="frame" x="448" y="10" width="67" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="wiy-9z-EWt">
                         <font key="font" metaFont="system"/>
@@ -55,8 +56,14 @@
                         </connections>
                     </segmentedCell>
                 </segmentedControl>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-e0-Ai8">
+                    <rect key="frame" x="16" y="16" width="97" height="97"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="umb-tA-D6Z"/>
+                </imageView>
             </subviews>
-            <point key="canvasLocation" x="323" y="237.5"/>
+            <point key="canvasLocation" x="268.5" y="237.5"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="fp0-cv-Tdc"/>
     </objects>
 </document>

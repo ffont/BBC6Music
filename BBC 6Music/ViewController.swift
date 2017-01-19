@@ -18,6 +18,7 @@ class BBC6MusicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUp()
+        @IBOutlet weak var artwork: NSImageView!
         _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(BBC6MusicViewController.updateLabels), userInfo: nil, repeats: true)
     }
     

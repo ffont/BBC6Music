@@ -1,5 +1,5 @@
 //
-//  RadioViewController.swift
+//  ViewController-OSX.swift
 //  BB6Status
 //
 //  Created by Frederic Font Corbera on 23/07/15.
@@ -14,9 +14,11 @@ class BBC6MusicViewController: NSViewController {
     var playerItem:AVPlayerItem!
     var player:AVPlayer!
     var metadata_parser:BBC6MetadataParser!
+    var artworkNeedsUpdate:Bool = false
     @IBOutlet weak var slider: NSSlider!
     @IBOutlet weak var onOff: NSSegmentedControl!
     @IBOutlet weak var label: NSTextField!
+    @IBOutlet weak var artwork: NSImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,10 @@ class BBC6MusicViewController: NSViewController {
             notification.informativeText = self.metadata_parser.recent_metadata.reversed()[0]["artist"] as? String
             NSUserNotificationCenter.default.deliver(notification)
         }
+        let artworkChanged = self.metadata_parser.parseArtworkLink()
+        if (artworkChanged) {
+            self.artworkNeedsUpdate = true
+        }
     }
 
     func updateLabels() {
@@ -88,5 +94,30 @@ class BBC6MusicViewController: NSViewController {
             attributedLabelContents.append(attributedText)
         }
         self.label.attributedStringValue = attributedLabelContents
+        
+        if (self.artworkNeedsUpdate && self.metadata_parser.current_artwork_url != "") {
+            // Update image from self.metadata_parser.current_artwork_url
+            print("Setting image \(self.metadata_parser.current_artwork_url)")
+            downloadImage(url: URL(string: self.metadata_parser.current_artwork_url as String)!)
+        }
+    }
+    
+    // Functions to get image data asynchornously (from http://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift)
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImage(url: URL) {
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            DispatchQueue.main.async() { () -> Void in
+                self.artwork.image = NSImage(data: data)
+                self.artworkNeedsUpdate = false
+            }
+        }
     }
 }
