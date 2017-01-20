@@ -18,7 +18,7 @@ class BBC6MusicViewController_iOS: BBC6MusicViewController {
         self.logo.alpha = alpha
     }
     
-    override func setLabelText(_ text: String) {
+    override func setLabelText(_ text: String, attributedText: NSAttributedString) {
         self.label.text = text
     }
     

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class BBC6MusicViewController_tvOS: BBC6MusicViewController {
+    @IBOutlet weak var artwork: UIImageView!
     @IBOutlet weak var label: UITextView!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var programNameLabel: UITextView!
@@ -18,8 +19,13 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
         self.logo.alpha = alpha
     }
     
-    override func setLabelText(_ text: String) {
-        self.label.text = text
+    override func setLabelText(_ text: String, attributedText: NSAttributedString?) {
+        if (attributedText != nil){
+            self.label.attributedText = attributedText
+        } else {
+            self.label.text = text
+        }
+        
     }
     
     override func setProgrameNameLabelText(_ text: String) {
@@ -35,5 +41,10 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
                 super.pressesEnded(presses, with: event)
             }
         }
+    }
+    
+    // MARK: set image handler
+    override func setImage(image: UIImage) {
+        self.artwork.image = image
     }
 }
