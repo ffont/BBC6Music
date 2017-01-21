@@ -14,17 +14,39 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
     @IBOutlet weak var label: UITextView!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var programNameLabel: UITextView!
+    var backgroundArtwork: UIImageView!
+    
+    override func setUp() {
+        super.setUp()
+        setUpBackgroundArtwork()
+    }
+    
+    func setUpBackgroundArtwork() {
+        self.backgroundArtwork = UIImageView()
+        self.backgroundArtwork.frame = CGRect(x: 0, y: -(self.view.frame.size.width-self.view.frame.size.height)/2, width: self.view.frame.size.width, height: self.view.frame.size.width)
+        self.view.insertSubview(self.backgroundArtwork, at: 0)
+        self.backgroundArtwork.addBlurEffect()
+        self.backgroundArtwork.alpha = 0.5
+    }
     
     override func setLogoAlpha(_ alpha: CGFloat) {
         self.logo.alpha = alpha
     }
     
     override func setProgrameNameLabelText(_ text: String) {
-        self.programNameLabel.text = text
+        let allRange = NSRange(location:0, length:text.characters.count)
+        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text)
+        attributedText.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 60)], range: allRange)
+        attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 60)], range: allRange)
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        let attributes: [String : Any] = [NSParagraphStyleAttributeName: paragraph]
+        attributedText.addAttributes(attributes, range: allRange)
+        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 39/255, green: 111/255, blue: 133/255, alpha: 1), range: allRange)
+        self.programNameLabel.attributedText = attributedText
     }
     
     override func updateLabels() {
-        var label_contents = ""
         let attributedLabelContents = NSMutableAttributedString()
         for element in self.metadata_parser.recent_metadata.reversed() {
             let artist:NSString = element["artist"]! as! NSString
@@ -33,11 +55,17 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
             let started:Date = element["started"]! as! Date
             let seconds_ago = now.timeIntervalSince(started)
             let minutes_ago:Int = Int(seconds_ago / 60.0)
-            label_contents += "\(track) by \(artist) (\(minutes_ago) minutes ago)\n"
-            let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: "\(track) by \(artist) (\(minutes_ago) minutes ago)\n")
-            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 23)], range: NSRange(location:0, length:track.length))
+            let label_contents:NSString = "\(track) by \(artist) (\(minutes_ago) minutes ago)\n" as NSString
+            let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: label_contents as String)
+            attributedText.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 40)], range: NSRange(location:0, length:label_contents.length))
+            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 40)], range: NSRange(location:0, length:track.length))
             attributedLabelContents.append(attributedText)
         }
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        let attributes: [String : Any] = [NSParagraphStyleAttributeName: paragraph]
+        attributedLabelContents.addAttributes(attributes, range: NSRange(location:0, length:attributedLabelContents.length))
+
         self.label.attributedText = attributedLabelContents
         self.setProgrameNameLabelText(self.metadata_parser.program_name as String)
     }
@@ -57,5 +85,6 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
     // MARK: set image handler
     override func setImage(image: UIImage) {
         self.artwork.image = image
+        self.backgroundArtwork.image = image
     }
 }
