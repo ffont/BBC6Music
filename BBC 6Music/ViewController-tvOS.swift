@@ -50,6 +50,7 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
     
     override func updateLabels() {
         let attributedLabelContents = NSMutableAttributedString()
+        var nAddedLines = 1
         for element in self.metadata_parser.recent_metadata.reversed() {
             let artist:NSString = element["artist"]! as! NSString
             let track:NSString = element["track"]! as! NSString
@@ -61,7 +62,10 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
             let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: label_contents as String)
             attributedText.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 40)], range: NSRange(location:0, length:label_contents.length))
             attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 40)], range: NSRange(location:0, length:track.length))
-            attributedLabelContents.append(attributedText)
+            if (nAddedLines <= 5) {
+                attributedLabelContents.append(attributedText)
+            }
+            nAddedLines += 1
         }
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .center

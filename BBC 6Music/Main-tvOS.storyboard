@@ -31,7 +31,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Program name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb6-aE-S7b" userLabel="ProgramNameLabel">
-                                <rect key="frame" x="42" y="583" width="1858" height="142"/>
+                                <rect key="frame" x="42" y="583" width="1858" height="112"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -54,14 +54,14 @@
                             <constraint firstItem="hdy-tW-ziz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="19R-sr-wSO"/>
                             <constraint firstItem="fkd-Om-2M1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="70B-Z5-KYN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fkd-Om-2M1" secondAttribute="trailing" constant="10" id="CSH-rt-caM"/>
-                            <constraint firstItem="hdy-tW-ziz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="DcG-3P-pY8"/>
+                            <constraint firstItem="hdy-tW-ziz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="DcG-3P-pY8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fkd-Om-2M1" secondAttribute="bottom" constant="10" id="Hw1-cv-Bxc"/>
                             <constraint firstItem="rb6-aE-S7b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NOU-XU-OBI"/>
                             <constraint firstItem="fkd-Om-2M1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="RqH-MU-ntx"/>
                             <constraint firstItem="rb6-aE-S7b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="jLN-py-jqd"/>
-                            <constraint firstItem="rb6-aE-S7b" firstAttribute="top" secondItem="hdy-tW-ziz" secondAttribute="bottom" constant="40" id="n1w-ck-HWP"/>
+                            <constraint firstItem="rb6-aE-S7b" firstAttribute="top" secondItem="hdy-tW-ziz" secondAttribute="bottom" constant="10" id="n1w-ck-HWP"/>
                             <constraint firstItem="rb6-aE-S7b" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="r9F-hY-WHG"/>
-                            <constraint firstItem="fkd-Om-2M1" firstAttribute="top" secondItem="rb6-aE-S7b" secondAttribute="bottom" constant="30" id="xWE-WW-6Mw"/>
+                            <constraint firstItem="fkd-Om-2M1" firstAttribute="top" secondItem="rb6-aE-S7b" secondAttribute="bottom" constant="10" id="xWE-WW-6Mw"/>
                         </constraints>
                     </view>
                     <connections>
