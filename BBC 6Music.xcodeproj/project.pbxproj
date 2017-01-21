@@ -42,6 +42,7 @@
 		2A1D737D1C400A7300E8758D /* BBC6MetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D737B1C400A7300E8758D /* BBC6MetadataParser.swift */; };
 		2A1D737E1C400A7300E8758D /* BBC6MetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D737B1C400A7300E8758D /* BBC6MetadataParser.swift */; };
 		2A1D73801C40100900E8758D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D737F1C40100900E8758D /* MainMenu.xib */; };
+		2A2E22B41E337AA7004388CC /* String+htmlEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2E22B31E337AA7004388CC /* String+htmlEncoding.swift */; };
 		2A34C9801E336CF6004AB42A /* UIImageView+blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34C97F1E336CF6004AB42A /* UIImageView+blur.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		2A1D73681C40050C00E8758D /* BBC6Music-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBC6Music-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1D737B1C400A7300E8758D /* BBC6MetadataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBC6MetadataParser.swift; sourceTree = "<group>"; };
 		2A1D737F1C40100900E8758D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = "BBC 6Music OSX/MainMenu.xib"; sourceTree = "<group>"; };
+		2A2E22B31E337AA7004388CC /* String+htmlEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+htmlEncoding.swift"; path = "BBC 6Music/String+htmlEncoding.swift"; sourceTree = SOURCE_ROOT; };
 		2A34C97F1E336CF6004AB42A /* UIImageView+blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+blur.swift"; path = "BBC 6Music/UIImageView+blur.swift"; sourceTree = SOURCE_ROOT; };
 		2A5360F71BEB73500019EEBB /* BBC6Music-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBC6Music-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 				2A1D734C1C40010800E8758D /* Info-iOS.plist */,
 				2A1D734D1C40010800E8758D /* Info-tvOS.plist */,
 				2A34C97F1E336CF6004AB42A /* UIImageView+blur.swift */,
+				2A2E22B31E337AA7004388CC /* String+htmlEncoding.swift */,
 			);
 			name = "BBC 6Music iOS/tvOS";
 			path = "BBC 6 Music";
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2E22B41E337AA7004388CC /* String+htmlEncoding.swift in Sources */,
 				2A1D732E1C4000AA00E8758D /* AppDelegate.swift in Sources */,
 				2A1D732C1C4000A600E8758D /* ViewController.swift in Sources */,
 				2A34C9801E336CF6004AB42A /* UIImageView+blur.swift in Sources */,

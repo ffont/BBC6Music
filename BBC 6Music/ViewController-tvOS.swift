@@ -26,7 +26,7 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
         self.backgroundArtwork.frame = CGRect(x: 0, y: -(self.view.frame.size.width-self.view.frame.size.height)/2, width: self.view.frame.size.width, height: self.view.frame.size.width)
         self.view.insertSubview(self.backgroundArtwork, at: 0)
         self.backgroundArtwork.addBlurEffect()
-        self.backgroundArtwork.alpha = 0.5
+        self.backgroundArtwork.alpha = 1.0
     }
     
     override func setLogoAlpha(_ alpha: CGFloat) {
@@ -34,8 +34,10 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
     }
     
     override func setProgrameNameLabelText(_ text: String) {
-        let allRange = NSRange(location:0, length:text.characters.count)
-        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text)
+        
+        let decodedText = text.stringByDecodingHTMLEntities
+        let allRange = NSRange(location:0, length:decodedText.characters.count)
+        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: decodedText)
         attributedText.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 60)], range: allRange)
         attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 60)], range: allRange)
         let paragraph = NSMutableParagraphStyle()
