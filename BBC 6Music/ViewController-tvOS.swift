@@ -19,18 +19,29 @@ class BBC6MusicViewController_tvOS: BBC6MusicViewController {
         self.logo.alpha = alpha
     }
     
-    override func setLabelText(_ text: String, attributedText: NSAttributedString?) {
-        if (attributedText != nil){
-            self.label.attributedText = attributedText
-        } else {
-            self.label.text = text
-        }
-        
-    }
-    
     override func setProgrameNameLabelText(_ text: String) {
         self.programNameLabel.text = text
     }
+    
+    override func updateLabels() {
+        var label_contents = ""
+        let attributedLabelContents = NSMutableAttributedString()
+        for element in self.metadata_parser.recent_metadata.reversed() {
+            let artist:NSString = element["artist"]! as! NSString
+            let track:NSString = element["track"]! as! NSString
+            let now = Date()
+            let started:Date = element["started"]! as! Date
+            let seconds_ago = now.timeIntervalSince(started)
+            let minutes_ago:Int = Int(seconds_ago / 60.0)
+            label_contents += "\(track) by \(artist) (\(minutes_ago) minutes ago)\n"
+            let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: "\(track) by \(artist) (\(minutes_ago) minutes ago)\n")
+            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 23)], range: NSRange(location:0, length:track.length))
+            attributedLabelContents.append(attributedText)
+        }
+        self.label.attributedText = attributedLabelContents
+        self.setProgrameNameLabelText(self.metadata_parser.program_name as String)
+    }
+
     
     // MARK: tvos button pressed handler
     override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {

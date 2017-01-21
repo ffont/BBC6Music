@@ -30,7 +30,7 @@ class BBC6MusicViewController: UIViewController {
         // Method to override in subclass
     }
     
-    func setLabelText(_ text: String, attributedText: NSAttributedString?) {
+    func setLabelText(_ text: String) {
         // Method to override in subclass
     }
     
@@ -41,7 +41,7 @@ class BBC6MusicViewController: UIViewController {
     func setUp(){
         // Labels and metadata stuff
         self.adaptSizes()
-        self.setLabelText("", attributedText: nil)
+        self.setLabelText("")
         self.setProgrameNameLabelText("")
         self.metadata_parser = BBC6MetadataParser()
         updateMetadata()
@@ -92,7 +92,6 @@ class BBC6MusicViewController: UIViewController {
     
     func updateLabels() {
         var label_contents = ""
-        let attributedLabelContents = NSMutableAttributedString()
         for element in self.metadata_parser.recent_metadata.reversed() {
             let artist:NSString = element["artist"]! as! NSString
             let track:NSString = element["track"]! as! NSString
@@ -101,11 +100,8 @@ class BBC6MusicViewController: UIViewController {
             let seconds_ago = now.timeIntervalSince(started)
             let minutes_ago:Int = Int(seconds_ago / 60.0)
             label_contents += "\(track) by \(artist) (\(minutes_ago) minutes ago)\n"
-            let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: "\(track) by \(artist) (\(minutes_ago) minutes ago)\n")
-            attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize:23)], range: NSRange(location:0, length:track.length))
-            attributedLabelContents.append(attributedText)
         }
-        self.setLabelText(label_contents, attributedText: attributedLabelContents)
+        self.setLabelText(label_contents)
         self.setProgrameNameLabelText(self.metadata_parser.program_name as String)
     }
     
